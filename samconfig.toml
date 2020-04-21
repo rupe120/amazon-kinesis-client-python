@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "kinesis-consumer-test"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-18swwzvsr9t8x"
+s3_prefix = "kinesis-consumer-test"
+region = "us-east-1"
+profile = "sandbox"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "OwnerTag=\"jrusso\" ProjectTag=\"Sandbox\""

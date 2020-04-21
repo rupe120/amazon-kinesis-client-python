@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Kinesis consumer testing
+Parameters:
+  OwnerTag:
+    Type: String
+    Default: jrusso
+  ProjectTag:
+    Type: String
+    Default: Sandbox
+    
+Resources:
+  WordsStream:
+    Type: "AWS::Kinesis::Stream"
+    Properties:
+      Name: WordsStream
+      RetentionPeriodHours: 24
+      ShardCount: 2 
+      Tags:
+        - Key: Owner
+          Value: !Ref OwnerTag
+        - Key: Project
+          Value: !Ref ProjectTag
+  
